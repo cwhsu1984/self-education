@@ -543,3 +543,39 @@ console.log(arr); // collection of anything
 arr[3](arr[2].name); // Hello Tony
 ```
 
+### arguments and spread
+ - won't use arguments as much in the next version of javascript
+   - still in current frameworks and librarays
+ - new approach is **spread**
+ - exeuction context(function)
+   - variable environment, 'this', outer environment, **'arugments'**
+ - arguments
+   - a list of all parameters you pass to a function
+```
+//function greet(firstname, lastname, language = 'en') { // next version
+//function greet(firstname, lastname, language, ...other) { // 'other' is using spread parameter, not available yet
+function greet(firstname, lastname, language) {
+
+    language = language || 'en'; // current way for default values
+
+    if (arguments.length === 0) {
+        console.log('missing parameters);
+    }
+
+    console.log(firstname);
+    console.log(lastname);
+    console.log(language);
+    console.log(arugments);
+    // will be DEPRECATED
+    console.log(arguments[0]); // same as firstname
+}
+
+greet(); // this is ok, just undefined, undefined, en, [], due to hoisting
+greet('John'); // John, undefined, en, ['John']
+greet('John', 'Doe'); // John, Doe, en, ['John', 'Doe']
+greet('John', 'Doe', 'es'); // 'John', 'Doe', 'es', ['John', 'Doe', 'es']
+
+```
+ - arguments are array-like, but **isn't exactly a JS array**
+   - doesn't have all the features of a JS array
+
