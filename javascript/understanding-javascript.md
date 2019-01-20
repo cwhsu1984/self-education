@@ -579,3 +579,26 @@ greet('John', 'Doe', 'es'); // 'John', 'Doe', 'es', ['John', 'Doe', 'es']
  - arguments are array-like, but **isn't exactly a JS array**
    - doesn't have all the features of a JS array
 
+### framework aside: function overloading
+ - JS doesn't have function overloading
+ - an alternative way
+```
+function greet(firstname, lastname, language) {
+    language = language || 'en';
+    if (language == 'en') {
+        console.log('Hello ' + firstname + ' ' + lastname);
+    }
+    if (language === 'es') {
+        console.log('Hola ' + firstname + ' ' + lastname);
+    }
+}
+
+function greetEnglish(firstname, lastname) {
+    greet(firstname, lastname, 'en');
+}
+function greetSpanish(firstname, lastname) {
+    greet(firstname, lastname, 'es');
+}
+greetEnglish('John', 'Doe'); //greet('John', 'Doe', 'en');
+greetSpanish('John', 'Doe'); //greet('John', 'Doe', 'es');
+```
