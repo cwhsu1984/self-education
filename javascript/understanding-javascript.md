@@ -631,3 +631,33 @@ function getPerson() {
 }
 console.log(getPerson()); // undefined due to semicolon insertion
 ```
+
+### framework aside: whitespace
+ - whitespace
+   - invisible characters that create literal **'space'** in your written code
+     - carriage returns, tabs, spaces
+   - make your code readable
+```
+// this is just an example, and personally, I will do it the 'clean code' way
+var
+    // first name of the person
+    firstname,
+
+    // last name of the person
+    lastname,
+
+    // the language
+    // can be 'en' or 'es'
+    language;
+
+var person = {
+    // the first name
+    firstname: 'John',
+
+    // the last name
+    // (always required)
+    lastname: 'Doe'
+}
+
+console.log(person);
+```
