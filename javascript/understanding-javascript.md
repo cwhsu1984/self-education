@@ -602,3 +602,10 @@ function greetSpanish(firstname, lastname) {
 greetEnglish('John', 'Doe'); //greet('John', 'Doe', 'en');
 greetSpanish('John', 'Doe'); //greet('John', 'Doe', 'es');
 ```
+
+### conceptual aside: syntax parsers
+ - code does not run directly
+ - code is being translated by intermediate program so that computer can understand it
+ - JavaScript engine on browser for example does this
+   - going through code character by character, making assumptions, stating certain rules
+   - even make changes to your code before it's executed
