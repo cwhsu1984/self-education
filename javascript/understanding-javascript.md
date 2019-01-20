@@ -701,3 +701,28 @@ var firstname = 'John';
 }(firstname)); // Inside IIFE: Hello John
 // })(firstname); // also works, just pick one and be consistent
 ```
+
+### framework aside: IIFES and safe code
+ - global execution context
+   - greeting: 'Hola'
+ - () -> new execution context(for the anonymous function)
+   - greeting: 'Hello'
+   - code is safe
+     - has its own execution context and is not colliding with other code
+```
+// app.js
+// IIFE
+(function(global, name) {
+    var greeting = 'Hello';
+    global.greeting = 'Hello'; // mutate global greeting from Hola to Hello
+    console.log(greeting + ' ' + name);
+}(window, 'John')); // Hello John
+
+console.log(greeting); // Hola
+// greet.js
+var greeting = 'Hola';
+
+// index.html
+greet.js
+app.js
+```
