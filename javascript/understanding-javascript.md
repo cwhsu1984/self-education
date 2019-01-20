@@ -726,3 +726,30 @@ var greeting = 'Hola';
 greet.js
 app.js
 ```
+
+### understanding closures
+ - global EC
+   - sayHi() EC
+     - name: 'Tony'
+     - console.log(whattosay + ' ' + name); -> sees whattosay: 'Hi'
+       - greet() is gone, greet() EC is gone
+       - what's in memory for greet() EC isn't
+       - JS makes sure that my function can still go down the scope chain and find it
+     - the EC has closed in its outer variables
+       - it's called **closure**
+ - greet() EC
+   - whattosay: 'Hi'
+     - memory space is still there when greet() EC is gone
+ - JS engine will make sure that whatever function I'm running, it will have access to variables that it's supposed to have access to
+```
+function greet(whattosay) {
+    return function(name) {
+        console.log(whattosay + ' ' + name);
+    }
+}
+
+var sayHi = greet('Hi'); // return a function with whattosay = Hi
+sayHi('Tony'); // Hi Tony
+
+//greet('Hi')('Tony'); // Hi Tony
+```
