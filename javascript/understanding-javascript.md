@@ -753,3 +753,87 @@ sayHi('Tony'); // Hi Tony
 
 //greet('Hi')('Tony'); // Hi Tony
 ```
+
+### understanding closures - Part2
+ - global EC
+   - buildFunctions(), fs
+     - buildFunctions() EC
+       - i: 3, arr[f0, f1, f2]
+       - this EC ends
+   - fs[0]() EC
+     - has variable i inside it, so it goes up the scope chain
+     - it goes to outer reference(where it was created)
+       - inside buildFunctions(buildFunctions EC gone but i and arr still hang around)
+     - this EC ends
+   - fs[1]() EC and fs[2]() EC
+     - same as fs[0]
+ - a free variable is a variable that is ouside a function, but that you have access to
+
+```
+function buildFunctions() {
+    var arr = [];
+
+    // i increase from 0 to 2 and push 3 function objects to arr
+    // after i becomes 3, the loop is terminated
+    for (var i = 0; i < 3; i++) {
+
+        arr.push(
+            // creating function object, putting this line of code into it's code property
+            // just creating function object, have invoked yet and thus not running
+            function() {
+                console.log(i);  // at the point of execution, i is 3
+            }
+        )
+
+    }
+
+    // what are values of i and arr on return?
+    // i = 3 and arr has 3 function objects
+    return arr;
+}
+
+var fs = buildFunctions();
+
+fs[0](); // 3
+fs[1](); // 3
+fs[2](); // 3
+
+
+
+function buildFunctions2() {
+    var arr = [];
+
+    for (var i = 0, i < 3; i++) {
+        // let variable is scoped to the block
+        // every time the for loop runs, this will be a new variable in memory
+        //let j = i;
+        //arr.push(
+        //    function() {
+        //        console.log(j);
+        //    }
+        //);
+
+        arr.push(
+            // IIFE, in each iteration, it's going to execute this function
+            // i = 0 to  2
+            // push the result of executing this function
+            (function(j) {
+                // executing this function gives us back a function
+                return function() {
+                    // when this gets executed, it looks for j
+                    // j store the value at the moment it was executed in the loop
+                    console.log(j);
+                }
+            }(i))
+        );
+    }
+
+    return arr;
+}
+
+var fs2 = buildFunctions2();
+
+fs2[0](); // 0
+fs2[1](); // 1
+fs2[2](); // 2
+```
