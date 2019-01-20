@@ -609,3 +609,25 @@ greetSpanish('John', 'Doe'); //greet('John', 'Doe', 'es');
  - JavaScript engine on browser for example does this
    - going through code character by character, making assumptions, stating certain rules
    - even make changes to your code before it's executed
+
+### dangerous aside: automatic semicolon insertion
+ - easy to make mistake
+ - hard to debug
+ - **always AVOID it**
+ - semicolons are optional
+   - when seeing a carriage return after the keyword **return**, syntax parser injects it for you
+   - cause a problem in your code
+```
+function getPerson() {
+    // this fail because it injects semicolon after return automatically
+    return
+    {
+        firstname: 'Tony'
+    }
+    // this works because JS sees bracket after return
+    return {
+        firstname: 'Tony'
+    }
+}
+console.log(getPerson()); // undefined due to semicolon insertion
+```
