@@ -520,4 +520,26 @@ var c = {
 c.log();
 ```
 
+### conceptual aside: arrays - collections of anything
+  - figure out what types of things are ony the fly
+    - **dynamically typed**
+    - can mix and match each individual item
+```
+var arr = [
+    1,
+    false,
+    {
+        name: 'Tony',
+        'address': '111 Main St.'
+    },
+    function(name) {
+        var greetng = 'Hello ';
+        console.log(greeting + name);
+    },
+    'hello'
+]; //new Array();
+
+console.log(arr); // collection of anything
+arr[3](arr[2].name); // Hello Tony
+```
 
