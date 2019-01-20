@@ -661,3 +661,43 @@ var person = {
 
 console.log(person);
 ```
+
+### immediately invoked functions expressions(IIFEs)
+ - IIFE
+```
+// function statement get put into memory
+function greet(name) {
+    console.log('Hello ' + name);
+}
+// invoke it to execute
+greet('John'); // Hello John
+
+// function expression not in memory until it is executed to the next line
+var greetFunc = function(name) {
+    console.log('Hello ' + name);
+}
+// invoke it using a variable pointing to that memory location
+greetFunc('John'); // Hello John
+
+// using an immediately invoked function expression (IIFE)
+var greeting = function(name) {
+    console.log('Hello ' + name);
+}('John'); // invoke it after creating it
+
+// greeting hold the result string instead of the function object
+console.log(greeting); // Hello John
+
+3; // valid javascript expression
+"I am a string"; // valid
+{ // valid
+    name: John
+};
+
+var firstname = 'John';
+// function expression wrapped in parentheses to trick syntax parser
+(function(name) {
+    var greeting = 'Inside IIFE: Hello';
+    console.log(greeting + ' ' + name);
+}(firstname)); // Inside IIFE: Hello John
+// })(firstname); // also works, just pick one and be consistent
+```
