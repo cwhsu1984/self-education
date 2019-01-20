@@ -453,3 +453,71 @@ console.log(d); // greeting: Hola
  - **equals operator** sets up new memory space
  - all primitive types are by value
  - all objects are by reference
+
+### objects, functions and **this**
+ - when function invoked a new execution context is created
+   - don't confuse this with the object discussed here
+ - function objects has
+   - properties, methods, name, code
+ - think of execution context on the code portion of function object
+   - variable environment
+   - outer lexical environment
+   - **this**
+     - pointing at different object, different thing, depending on how function is invoked
+     - there are a few scenarios where this will be changed depending on how the function is called
+```
+console.log(this); // window
+
+function a() {
+    console.log(this); // window
+    this.newvariable = 'hello';
+}
+
+var b = function() {
+    console.log(this); // window
+}
+
+// 3 executon contexts(ECs), 3 this(window, a, b)
+a();
+
+console.log(newvariable); // on the global(window) object
+
+b();
+
+var c = {
+    name: 'The c object',
+    log: function() { // a method on an object
+        // objects set equal to by reference, self points at the same location
+        // in memory as this
+        // then just use self instead of this even inside sub-functions
+        var self = this;
+
+        // we will use let instead of var to clear some of these problems up
+
+        // in this case, function is a method attached to an object, this keyword
+        // becomes the object the method is attached to.
+        // this points at that very object that contains you
+        //this.name = 'Updated c object';
+        //console.log(this);
+        //
+        //var setname = function(newname) {
+        //    this.name = newname;  // mutate global object, WEIRD, but that's how javascript works!
+        //}
+        //setname('Updated again! The c object'); // window.name = 'Update again! The c object';
+        //console.log(this);
+
+        // best practice if to use self instead of this
+        self.name = 'Updated c object';
+        console.log(self);
+        var setname = function(newname) {
+            self.name = newname; // looks down scope chain and find self pointing at c object
+        }
+        setname('Updated again! The c object'); // c.name = 'Update again! The c object';
+        console.log(self);
+    }
+}
+
+c.log();
+```
+
+
