@@ -1204,3 +1204,34 @@ console.log(john); // john gets functions from jane and jim object
 ```
  - in the next version of JavaScript, there also will be something called **extends**
    - to be used to se the prototype
+
+## 6. build objects
+### function constructors, 'new', and the history of javascript
+ - JavaScript was built by a guy named Brendon Eich
+ - call it JavaScript to attract Java developers
+ - JavaScript sounds like Java and looks a little like Java, but is **NOTHING like Java**
+   - doesn't really have classes although there is a class keyword in the next version
+     - still isn't really a class the way it is in Java or C# or C++
+ - function constructors are just functions
+```
+function Person(firstname, lastname) {
+    console.log(this); // 'this' points to an empty object of Person
+    this.firstname = firstname;
+    this.lastname = lastname;
+    console.log('This function is invoked');
+
+    // having the next line would return greeting object instead
+    // return { greeting: 'i got in the way' };
+}
+
+// new is an operator creates an empty object and then call this function
+var john  = new Person('John', 'Doe');
+console.log(john); // Person object firstname: John, lastname: Doe
+
+var jane = new Person('Jane', 'Doe');
+console.log(jane); // Person object firstname: Jane, lastname: Doe
+```
+ - function constructors
+   - the **new** operator makes the **new object**
+   - a normal function that is used to construct objects
+   - the **'this'** variable points a new empty object, and that object is returned from the function automatically
