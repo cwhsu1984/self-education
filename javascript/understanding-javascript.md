@@ -919,3 +919,82 @@ tellMeWhenDone(function() {
 });
 ```
 
+### call(), apply() and bind()
+ - function execution context
+   - Variable Environment, 'this', Outer Environment
+ - call, apply, bind are used to control what the 'this' variable ends up being
+ - function is a special type of object
+   - CODE
+     - "invocable" ()
+   - NAME
+     - optional, can be anonymous
+   - call()
+     - **execute function**, decide what 'this' should be and the reset is just what normally pass to the function
+   - apply()
+     - same as call except that it takes **an array of parameters**
+   - bind()
+     - **create a copy** of the function whose 'this' is whatever pass by bind
+
+```
+var person = {
+    firstname: 'John',
+    lastname: 'Doe',
+    getFullName: function() {
+
+        var fullname = this.firstname + ' ' + this.lastname;
+        return fullname;
+
+    }
+}
+
+var logName = function(lang1, lang2) {
+    console.log('Logged: ' + this.getFullName()); // 'this' points to global object
+    console.log('Arguments: ' + lang1 + ' ' + lang2);
+}
+//}.bind(person); // create on the fly bound with the this variable "person"
+
+// pass whatever object I want to be the 'this' variable when the function runs
+var logPersonName = logName.bind(person); // Logged: John Doe
+
+logPersonName('en'); // Logged: John Doe, lang1: en, lang2: undefined
+
+logName.call(person, 'en', 'es'); // Logged: John Doe, lang1: en, lang2: es
+
+logName.apply(person, ['en', 'es']); // Logged: John Doe, lang1: en, lang2: es
+
+//logName();
+
+// function expression
+(function(lang1, lang2) {
+    console.log('Logged: ' + this.getFullName());
+    console.log('Arguments: ' + lang1 + ' ' + lang2);
+}).apply(person, ['en', 'es']); // Logged: John Doe, lang1 en, lang2: es
+
+// function borrowing
+var person2 = {
+    firstname: 'Jane',
+    lastname: 'Doe'
+}
+
+console.log(person.getFullName.apply(person2)); // Jane Doe
+
+// function currying
+function multiply(a, b) {
+    return a*b;
+}
+
+var multiplyByTwo = multiply.bind(this, 2); // set a = 2
+// equals to above line
+//function multiplyByTwo(b) {
+//    return 2*b;
+//}
+
+console.log(multiplyByTwo(4)); // 8, since b = 4
+
+var multiplyByThree = multiply.bind(this, 3); // set a = 3
+
+console.log(multiplyByThree(4)); // 12
+```
+ - function currying
+   - creating a copy of a function but with some preset parameters
+   - very userful in mathematical situations
