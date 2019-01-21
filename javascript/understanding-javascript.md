@@ -1155,3 +1155,52 @@ var b = function() { }; // empty function object
 // check c.__proto__ and c.__proto__.__proto__
 var c = []; // []
 ```
+
+### reflection and extend
+ - reflection
+   - an object can look at itself, listing and changing its properties and methods
+```
+var person = {
+    firstname: 'Default',
+    lastname: 'Default',
+    getFullName: function() {
+        return this.firstname + ' ' + this.lastname; // does not refer to person, it refers to john in this case
+    }
+}
+
+var john = {
+    firstname: 'John',
+    lastname: 'Doe'
+}
+
+// DON'T DO THIS EVER! for demo purposes only!!!
+john.__proto__ = person;
+
+// loop over every member in object
+for (var prop in john) {
+    if (john.hasOwnProperty('prop')) { // check if its really on john object, not its prototype
+        console.log(prop + ': ' + john[prop]);
+    }
+}
+
+var jane = {
+    address: '111 Main St.',
+    getFormalFullName: function() {
+        return this.lastname + ', ' + this.firstname;
+    }
+}
+
+var jim = {
+    getFirstName: function() {
+        return firstname;
+    }
+}
+
+// use underscore here
+_.extend(john, jane, jim);
+
+// to understand this, read underscore source code
+console.log(john); // john gets functions from jane and jim object
+```
+ - in the next version of JavaScript, there also will be something called **extends**
+   - to be used to se the prototype
