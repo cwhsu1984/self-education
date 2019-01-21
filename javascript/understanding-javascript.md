@@ -432,7 +432,7 @@ c.greeting = 'hello'; // mutate
 console.log(c); // greeting:hello
 console.log(d); // greeting:hello
 
-by reference (even as paramters)
+by reference (even as parameters)
 function changeGreeting(obj) {
     obj.greeting = 'Hola'; // mutate
 }
