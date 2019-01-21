@@ -1074,3 +1074,19 @@ console.log(arr6);
 var arr7 = _.filter([2,3,4,5,6,7], function(item) { return item % 2 === 0; });
 console.log(arr7);
 ```
+
+## 5. object-oriented javascript and prototypal inheritance
+### conceptual aside: classical vs prototypal inheritance
+ - classical vs prototypal inheritance
+ - inheritance
+   - one object gets access to the properties and methos of another object
+   - you have an object and another object
+     - object can access the properties and methos on that other object
+ - classical inheritance
+   - verbose
+     - friend, protected, private, interface
+ - prototypal inheritance
+   - simple
+     - flexible
+     - extensible
+     - easy to understand
