@@ -874,3 +874,48 @@ var greetSpanish = makeGreeting('es'); // function object whose closure points t
 greetEnglish('John', 'Doe'); // Hello John Doe
 greetSpanish('John', 'Doe'); // Hola John Doe
 ```
+
+### closures and callbacks
+ - callback function
+   - a function you give to another function, to be run when the other function is finished
+   - so the function you call(i.e. invoke), 'calls back' by calling the function you gave it when it finishes
+     - I call function A, and give it function B
+     - when function A finishes running, it calls function B for me
+
+```
+function sayHiLater() {
+
+    var greeting = 'Hi!';
+
+    setTimeout(function() { // function object as a callback
+
+        console.log(greeting);
+
+    }, 3000);
+
+}
+
+sayHiLater();
+
+// jQuery uses function expressions and first-class functions!
+//$("button").click(function() {
+//
+//});
+
+function tellMeWhenDone(callback) {
+    var a = 1000; // some work
+    var b = 2000; // some work
+
+    callback(); // the 'callback', it runs the function I give it!
+}
+
+tellMeWhenDone(function() {
+    console.log('I am done!');
+});
+
+tellMeWhenDone(function() {
+    //alert('I am done!');
+    console.log('All done...');
+});
+```
+
