@@ -1051,3 +1051,26 @@ var checkPastLimitSimplified = function (limiter) {
 var arr5 = mapForEach(arr1, checkPastLimitSimplified(1));
 console.log(arr5); // [false, true, true]
 ```
+
+### functional programming - Part2
+ - underscore.js
+   - develop version has lots of comments to read
+   - a lot of function programming concetps
+   - clean and popular
+   - first
+   - *you can learn a lot from read it*
+ - lodash
+   - came along later
+```
+index.html
+underscore.js
+app.js
+
+// app.js
+// '_' is the global object of underscore library
+var arr6 = _.map(arr1, function(item) { return item * 3 });
+console.log(arr6);
+
+var arr7 = _.filter([2,3,4,5,6,7], function(item) { return item % 2 === 0; });
+console.log(arr7);
+```
