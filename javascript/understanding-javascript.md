@@ -1144,3 +1144,14 @@ jane.__proto__ = person;
 // it tries to find lastname on jane but cannot find it, then it tries to find lastname on person
 console.log(jane.getFullName()); // Jane Default
 ```
+
+### everything is an object
+ - everything is an object (or a primitive)
+```
+// check a.__proto__
+var a = {}; // base object
+// check b.__proto__ and b.__proto__.__proto__
+var b = function() { }; // empty function object
+// check c.__proto__ and c.__proto__.__proto__
+var c = []; // []
+```
