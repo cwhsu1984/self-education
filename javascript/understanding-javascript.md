@@ -1090,3 +1090,57 @@ console.log(arr7);
      - flexible
      - extensible
      - easy to understand
+
+### understanding the prototype
+ - object has prototype
+ - each prototype can have its own prototype
+ - if property cannot be find on object itself
+   - it then looks for its prototype
+     - this can go all the way up to all prototype
+     - **prototype chain**
+```
+// NOT code, just showing object hierarchy
+// obj.prop1
+// obj.prop2
+// obj.prop3
+obj
+ - prop1
+ - proto
+  - prop2
+  - proto
+   - prop3
+
+// prop2 isn't on obj and obj2
+// it's just that when JS engine goes down the chain to search, they happen
+// to be pointing at the same place
+obj2
+ - proto (can point to the same object as obj.proto)
+```
+```
+var person = {
+    firstname: 'Default',
+    lastname: 'Default',
+    getFullName: function() {
+        return this.firstname + ' ' + this.lastname; // does not refer to person, it refers to john in this case
+    }
+}
+
+var john = {
+    firstname: 'John',
+    lastname: 'Doe'
+}
+
+// DON'T DO THIS EVER! for demo purposes only!!!
+john.__proto__ = person;
+console.log(john.getFullName()); // John Doe
+// it first tries to find firstname on john
+console.log(john.firstname); // John
+
+var jane = {
+    firstname: 'Jane'
+}
+
+jane.__proto__ = person;
+// it tries to find lastname on jane but cannot find it, then it tries to find lastname on person
+console.log(jane.getFullName()); // Jane Default
+```
