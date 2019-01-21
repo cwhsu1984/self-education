@@ -837,3 +837,40 @@ fs2[0](); // 0
 fs2[1](); // 1
 fs2[2](); // 2
 ```
+
+### framework aside: function factories
+ - global EC
+   - greetEnglish, greetSpanish, makeGreeting
+ - makeGreeting('en') EC
+   - language 'en'
+ - makeGreeting('es') EC
+   - language 'es'
+ - greetEnglish() EC
+   - outer reference points to language 'en' from makeGreeting('en') where it sits lexically
+   - form its closure with language 'en'
+ - greetSpanish() EC
+   - outer reference points to language 'es' from makeGreeting('es') where it sits lexically
+   - form its closure with language 'es'
+ - *every time you call a function, you get a new execution context*
+   - doesn't matter how many times you call it
+   - *any functions created inside of it will point to that execution context*
+```
+function makeGreeting(language) {
+    return function (firstname, lastname) {
+        if (language === 'en') {
+            console.log('Hello ' + firstname + ' ' + lastname);
+        }
+
+        if (language === 'es') {
+            console.log('Hola ' + firstname + ' ' + lastname);
+        }
+    }
+}
+
+// each makeGreeting has its own EC with different language
+var greetEnglish = makeGreeting('en'); // function object whose closure points to en
+var greetSpanish = makeGreeting('es'); // function object whose closure points to es
+
+greetEnglish('John', 'Doe'); // Hello John Doe
+greetSpanish('John', 'Doe'); // Hola John Doe
+```
