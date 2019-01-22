@@ -1402,3 +1402,47 @@ for (var i = 0; i < arr.length; i++) {
 
 }
 ```
+
+### object.create and pure prototypal inheritance
+ - to create an object
+   - function constructors
+   - Object.create
+     - create a new object that becomes the basis for all others
+     - override hide properties and methods on those created objects
+       - set values of those properties and methods on new objects themselves
+```
+// polyfill
+if (!Object.create) {
+    Object.create = function (o) {
+        if (arguments.length > 1 ) {
+            throw new Error('Object.create implementation'
+            + ' only accepts the first parameter.');
+        }
+        function F() {}
+        F.prototype = o;
+        return new F();
+    };
+}
+
+var person = {
+    firstname: 'Default',
+    lastname: 'Default',
+    greet: function() {
+        return 'Hi ' + this.firstname; // use 'this' so it finds the current object
+    }
+}
+
+var john = Object.create(person);
+// console.log(john'); // empty object, __proto__ is Person object
+// john.greet(); // Hi Default
+
+// pure prototypal inheritance
+john.firstname = 'John';
+john.lastname 'Doe';
+console.log(john); // object with firstname and lastname
+john.greet(); // Hi John
+
+```
+ - polyfill
+   - **code that adds a feature which the engine MAY lack**
+   - fill in the gap for those doesn't support Object.create
