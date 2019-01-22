@@ -1554,3 +1554,37 @@ console.log(typeof null); // object, a bug since, like, FOREVER...
 var z = functin() { };
 console.log(typeof z); // function (object)
 ```
+
+### strict mode
+ - tell JavaScript engine that you would like it process your code in a stricter way
+ - use strict
+   - MUST define a variable in order to use it
+   - either at top of your file, or at top of a function
+   - if you have serveral JavaScript files, and you concatenate and minify them in on file
+     - if that first file has use strict at the top
+     - the whole thing will be processed using that strict JavaScript engine flag
+     - might cause trouble if other JavaScript files don't follow the strict rules
+ - [Strict Mode][3]
+
+[3]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+```
+function logNewPerson() {
+    // NOT all JS implemented this
+    'use strict';
+
+    var person2;
+    persom2 = {};
+    console.log(persom2);
+}
+
+// MUST at top of file
+//'use strict';
+
+var person;
+// Uncaught ReferenceError: persom is not defined
+persom = {};
+console.log(persom); // object
+// window.persom is object
+// window.person is undefined
+logNewPerson(); // Uncaught ReferenceError: persom2 is not defined
+```
