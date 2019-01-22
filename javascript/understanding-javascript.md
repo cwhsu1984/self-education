@@ -1488,3 +1488,32 @@ class InformalPerson extends Person {
 
 var john = new Person('John', 'Doe');
 ```
+
+## 7. odds and ends
+### initialization
+ - don't be intimidated
+ - clean and useful way to initialize data
+ - nice for prototyping
+```
+var people = [
+    {
+        firstname: 'John',
+        lastname: 'Doe',
+        addresses: [
+            '111 Main St.',
+            '222 Third St.'
+        ]
+    },
+    {
+        firstname: 'Jane',
+        lastname: 'Doe',
+        addresses: [
+            '333 Main St.',
+            '444 Fifth St.'
+        ],
+        greet: function() {
+            return 'Hello!';
+        }
+    }
+]
+```
