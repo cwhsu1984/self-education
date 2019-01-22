@@ -1363,3 +1363,21 @@ Number.prototype.isPositive = function() {
 var a = new Number(3); // it's not a number, but an object
 a.isPositive(); // true
 ```
+
+### dangerous aside: built-in function constructors
+ - in general, don't use the built-in function constructors
+   - in case you absolutely have to use them, understand what you're doing to yourself
+ - use literals
+ - use the actual primitive vales
+ - use **Moment.js** instead of Date
+   - looks like carbon in php to me
+```
+// try on console
+var a = 3
+var b = new Number(3); // return object with primitive value 3
+
+a == b // true because this coerces types
+a === b // false, a is primitive, b is an object
+var c = Number("3"); // return 3
+c // 3
+```
