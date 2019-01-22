@@ -1517,3 +1517,40 @@ var people = [
     }
 ]
 ```
+
+### 'typeof', 'instanceof', and figuring out what something is
+ - typeof
+   - what type of thing is this
+   - typeof(null) is **object**, it's a bug FOREVER
+ - instanceof
+   - if anywhere down that whole prototype chain of going proto, to proto, to proto, I find this type of object
+```
+var a = 3;
+console.log(typeof a); // 'n'umber, primitive!
+
+var b = 'Hello';
+console.log(typeof b); // string
+
+var c = {};
+console.log(typeof c); // object
+
+var d = [];
+console.log(typeof d); // array is object, weird!
+// console.log(d.toString()); // empty string
+// .call, invoke this function but tell it what this variable should point to
+console.log(Object.prototype.toString.call(d)); // [object Array] better!
+
+function Person(name) {
+    this.name = name;
+}
+
+var e = new Person('Jane');
+console.log(typeof e); // object
+console.log(e instanceof Person); // true
+
+console.log(typeof undefined); // undefined, make sense
+console.log(typeof null); // object, a bug since, like, FOREVER...
+
+var z = functin() { };
+console.log(typeof z); // function (object)
+```
