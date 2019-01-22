@@ -1446,3 +1446,45 @@ john.greet(); // Hi John
  - polyfill
    - **code that adds a feature which the engine MAY lack**
    - fill in the gap for those doesn't support Object.create
+
+### es6 and classes
+ - JavaScript doesn't have classes
+ - it will in the next version, but in a different way
+ - JavaScript class
+   - define an object
+   - has a constructor acts somewhat like the constructor function
+   - is an **object**
+   - *you're creating new objects from that object*
+   - **prototypal inheritance**
+   - *this is not like what you see in C# or Java or C++*
+   - use **extends** to set prototype for any of my objects created with this class
+     - set **__proto__**
+     - **super** call the constructor of the object that is my prototype
+     - can override or hide
+ - syntactic sugar
+   - a different way to type something that doesn't change how it works under the hood
+```
+// this is an object
+class Person {
+    constructor(firstname, lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
+    greet() {
+        return 'Hi ' + firstname;
+    }
+}
+
+class InformalPerson extends Person {
+    constructor(firstname, lastname) {
+        super(firstname, lastname);
+    }
+
+    greet() {
+        return 'Yo ' + firstname;
+    }
+}
+
+var john = new Person('John', 'Doe');
+```
