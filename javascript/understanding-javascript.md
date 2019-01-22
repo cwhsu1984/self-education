@@ -1381,3 +1381,24 @@ a === b // false, a is primitive, b is an object
 var c = Number("3"); // return 3
 c // 3
 ```
+
+### dangerous aside: arrays and for..in
+ - in the case of arrays, don't use for..in
+ - use **standard for loop** instead
+```
+Array.prototype.myCustomFeature = 'cool!';
+
+var arr = ['John', 'Jane', 'Jim'];
+
+for (var prop in arr) {
+    // 0, 1, 2 is property name
+    // after add myCustomFeature, you get additional property name myCustomFeature
+    // that's not what you want
+    console.log(prop + ': ' + arr[prop]);
+}
+
+// this is safer
+for (var i = 0; i < arr.length; i++) {
+
+}
+```
