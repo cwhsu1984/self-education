@@ -1279,3 +1279,41 @@ Person.prototype.getFormalFullName = function() {
 }
 console.log(john.getFormalFullName()); // Doe John
 ```
+
+### dangerous aside: 'new' and functions
+ - any function that we intend to be a function constructor
+   - always use a **capital letter** for its name
+   - *just a convention*
+   - *use a Linter to help you*
+   - JavaScript engine itself doesn't care whether you do or you don't have the new operator
+ - there are new ways coming in JavaScript to create objects
+   - function constructors are likly going away, but not so soon
+```
+function Person(firstname, lastname) {
+    console.log(this);
+    this.firstname = firstname;
+    this.lastname = lastname;
+    console.log('This function is invoked');
+}
+
+Person.prototype.getFullName = function() {
+    return this.firstname + ' ' + this.lastname;
+}
+
+// var john = new Person('John', 'Doe');
+// if missing 'new' and execut it.
+// Since function not returning anything, you get undefined
+var john = Person('John', 'Doe');
+console.log(john);
+
+// var jane = new Person('Jane', 'Doe');
+var jane = Person('Jane', 'Doe');
+console.log(jane);
+
+Person.prototype.getFormalFullName = function() {
+    return this.lastname + ' ' + this.firstname;
+}
+
+// get undefined error here, too
+console.log(john.getFormalFullName()); // Doe John
+```
