@@ -1235,3 +1235,47 @@ console.log(jane); // Person object firstname: Jane, lastname: Doe
    - the **new** operator makes the **new object**
    - a normal function that is used to construct objects
    - the **'this'** variable points a new empty object, and that object is returned from the function automatically
+
+### function constructors and '.prototype'
+ - function (a special type of object)
+   - CODE
+     - "invocable" ()
+   - NAME
+     - optional, can be anonymous
+   - **prototype**
+     - used **only** by the new operator
+ - functions in JavaScript are objects
+   - they take up memory space
+ - put method in Person
+   - if I have 1000 person objects, I'll have 1000 getFullName methods
+ - add method to prototype
+   - I'll only have one
+   - from a efficiency standpoint, it's better to put methods on the prototype
+     - only need one copy to be used
+ - need properties for each object cuz it's going to have different values per object
+ - but for methods, I only need one
+```
+function Person(firstname, lastname) {
+    console.log(this);
+    this.firstname = firstname;
+    this.lastname = lastname;
+    // this.getFullName = function () {} // this exsits in every object which is bad
+    console.log('This function is invoked');
+}
+
+Person.prototype.getFullName = function() {
+    return this.firstname + ' ' + this.lastname;
+}
+
+// john.__proto__
+var john  = new Person('John', 'Doe');
+console.log(john);
+
+var jane = new Person('Jane', 'Doe');
+console.log(jane);
+
+Person.prototype.getFormalFullName = function() {
+    return this.lastname + ' ' + this.firstname;
+}
+console.log(john.getFormalFullName()); // Doe John
+```
