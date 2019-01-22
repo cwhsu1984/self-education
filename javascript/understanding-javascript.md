@@ -1588,3 +1588,12 @@ console.log(persom); // object
 // window.person is undefined
 logNewPerson(); // Uncaught ReferenceError: persom2 is not defined
 ```
+
+## 8. examining famous frameworks and libraries
+### learning from other's good code
+ - an open source education
+   - you should do
+   - learn from AngularJS, jQuery and others
+   - github
+     - explore Front-end JavasSript Frameworks
+ - a good way to learn advanced patterns and concepts in JavaScript
