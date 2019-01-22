@@ -1597,3 +1597,33 @@ logNewPerson(); // Uncaught ReferenceError: persom2 is not defined
    - github
      - explore Front-end JavasSript Frameworks
  - a good way to learn advanced patterns and concepts in JavaScript
+
+### deep dive into source code
+ - jQuery
+   - a JavaScript library
+   - deals with cross browser issues
+   - let you manipulate the DOM
+ - see course videos for details
+```
+// index.html
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="main" class="container">
+            <h1>People</h1>
+            <ul class="people">
+                <li>John Doe</li>
+                <li>Jane Doe</li>
+                <li>Jim Doe</li>
+            </ul>
+        </div>
+        <script src="jquery-1.11.2.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
+
+// app.js
+var q = $("ul.people li");
+console.log(q);
+```
