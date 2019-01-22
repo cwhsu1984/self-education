@@ -1627,3 +1627,13 @@ logNewPerson(); // Uncaught ReferenceError: persom2 is not defined
 var q = $("ul.people li");
 console.log(q);
 ```
+
+### deep dive into source code: jQuery - Part2
+ - sizzlejs
+   - Sizzle CSS Selector
+ - jQuery.find = sizzle
+ - jQuery.makeArray
+ - init.prototype
+ - jQuery.fn
+ - jQuery.prototype
+ - jQuery.fn.init
