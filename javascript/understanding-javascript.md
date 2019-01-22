@@ -1344,7 +1344,7 @@ a
 // check a.
 // check Date.prototype.
 ```
- - edit the prototype property of built in function constrcutor
+ - edit the prototype property of built in function constructor
    - powerful way to enhance JavaScript
    - **you dont't wanna overwrite an existing or preexisting property or method**
 ```
