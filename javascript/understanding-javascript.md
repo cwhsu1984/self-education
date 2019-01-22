@@ -1317,3 +1317,49 @@ Person.prototype.getFormalFullName = function() {
 // get undefined error here, too
 console.log(john.getFormalFullName()); // Doe John
 ```
+
+### conceptual aside: built-in function constructors
+```
+// try in console
+
+// 'new' function constrcutors creates an object
+var a = new Number(3);
+
+// Number {[[PrimitiveValue]]: 3}
+a
+// check Number.prototype.
+
+var a = new String("John");
+// check String.prototype.
+
+a.indexOf("o");
+// String objects contains primitive
+a
+
+"John".length // the same as 'new String("John")'
+
+var a = new Date("3/1/2015");
+// a Date object
+a
+// check a.
+// check Date.prototype.
+```
+ - edit the prototype property of built in function constrcutor
+   - powerful way to enhance JavaScript
+   - **you dont't wanna overwrite an existing or preexisting property or method**
+```
+String.prototype.isLengthGreaterThen = function(limit) {
+    return this.length > limit;
+}
+
+console.log("John".isLengthGreaterThen(3)); // true
+
+Number.prototype.isPositive = function() {
+    return this > 0;
+}
+
+// try this block in console
+3.isPositive(); // won't convert a number to an object automatically
+var a = new Number(3); // it's not a number, but an object
+a.isPositive(); // true
+```
