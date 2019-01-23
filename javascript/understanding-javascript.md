@@ -1662,3 +1662,11 @@ console.log(q);
    - reusable library/framework
    - easy to type 'G$()' structure
    - support jQuery
+
+### structuring safe code
+```
+// Greetr.js
+(function(global, $) {
+
+}(window, jQuery));
+```
