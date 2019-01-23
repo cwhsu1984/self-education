@@ -1922,3 +1922,26 @@ g.greet().setLang('es').greet(true).log();
 
 ### good commenting
  - see course content
+
+### let's use our framework!
+```
+// app.js
+var g = G$('John', 'Doe'); // firstname: John, lastname: Doe, language: en
+g.greet().setLang('es').greet(true).log();
+
+$('#login').click(function() {
+
+    var loginGrtr = G$('John', 'Doe');
+
+    $('#logindiv').hide();
+
+    loginGrtr.setLang($('#lang').val()).HTMLGreeting('#greeting', true).log();
+
+});
+// Greetr.js
+// ';' in case there's some other code injected before ours
+// that doesn't quite finish out its semicolons properly
+;(function(global, $) {
+
+}(window, jQuery));
+```
