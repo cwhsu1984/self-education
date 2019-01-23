@@ -1962,3 +1962,9 @@ $('#login').click(function() {
 
 [4]: http://www.typescriptlang.org/
 [5]: https://github.com/google/traceur-compiler
+
+## 11. bonus: getting ready for ECMAScript 6
+### existing and upcoming features
+ - [es6 features reference][6]
+
+[6]: https://github.com/lukehoban/es6features
