@@ -1670,3 +1670,31 @@ console.log(q);
 
 }(window, jQuery));
 ```
+
+### our object and its prototype
+```
+// app.js
+var g = G$('John', 'Doe'); // firstname: John, lastname: Doe, language: en
+
+// Greetr.js
+(function(global, $) {
+
+    var Greetr = function(firstname, lastname, language) {
+        return new Greetr.init(firstname, lastname, language);
+    }
+
+    Greetr.prototype = {};
+
+    Greetr.init = function (firstname, lastname, language) {
+        var self = this;
+        self.firstname = self.firstname || '';
+        self.lastname = self.lastname || '';
+        self.language = self.language || 'en';
+    }
+
+    Greetr.init.prototype = Greetr.prototype;
+
+    global.Greetr = global.G$ = Greetr;
+
+}(window, jQuery));
+```
