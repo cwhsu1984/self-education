@@ -1,5 +1,7 @@
 This is a learning note of [JavaScript: Understanding the Weird Parts][0]
 
+**I personally highly recommend this course**
+
 [0]: https://www.udemy.com/understand-javascript/
 
 ## 2. Execution Contexts and Lexical Environments
@@ -1968,3 +1970,9 @@ $('#login').click(function() {
  - [es6 features reference][6]
 
 [6]: https://github.com/lukehoban/es6features
+
+## 12. conclusion
+### learning to love the weird parts
+ - [author][7]
+
+[7]: https://twitter.com/anthonypalicea
