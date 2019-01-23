@@ -1653,3 +1653,12 @@ console.log(q);
 var q = $("ul.people").addClass("newclass").removeClass("people");
 console.log(q);
 ```
+
+## 9. let's build a framework/library
+### requirements
+ - greetr
+   - when given a first name, last name, and optional language, it generates formal and informal greetings
+   - support English and Spanish languages
+   - reusable library/framework
+   - easy to type 'G$()' structure
+   - support jQuery
