@@ -17,3 +17,75 @@ This is a learning note of [html and css for beginners][0]
  - completed finish it
  - finish every course you take
  - **DONT procrastinate**
+
+## what's HTML?
+ - stands for HyperText Markup Language
+   - markup language
+   - it's used to create web pages
+ - How does it look like?
+```
+<p> this is called a p tag or paragraph tag </p>
+<h1> page heading </h1>
+<hr>
+```
+```
+<p>
+<h1>
+<i>
+<bold>
+<strong>
+<header>
+<nav>
+<br>
+<div>
+<form>
+<audio>
+<footer>
+<embed>
+```
+ - How does it work?
+   - save with .html extension
+     - index.html
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Web Page</title>
+    </head>
+    <!-- anything between body tag are going to be visible in the browser -->
+    <body>
+        <p>Hi, I am a paragraph, who are you?</p>
+    </body>
+</html>
+```
+ - what about css;
+  - stands for **cascading style sheets**
+  - it's used to control how a web page looks(styles)
+ - how does css look like?
+```
+p {
+  color:red; /* change color of p tag */
+  font-weight:bold;
+  }
+```
+```
+/* common css property */
+border
+color
+margin
+text-align
+visibility
+position
+overflow
+display
+width
+float
+font-family
+top
+transform
+```
+ - how does it works?
+   - save with .css extension
+   - style.css
+   - style sheet
