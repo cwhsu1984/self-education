@@ -1920,3 +1920,5 @@ g.greet().setLang('es').greet(true).log();
 }(window, jQuery));
 ```
 
+### good commenting
+ - see course content
