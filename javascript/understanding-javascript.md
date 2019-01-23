@@ -1948,3 +1948,17 @@ $('#login').click(function() {
 
 ### a side note
  - I personally highly recommend this course
+
+## 10. bonus lectures
+### typescript, es6, and transpiled languages
+ - convert the syntax of one programming language, to another
+   - in this case languages that don't really ever run anywhere, but instead are processed by 'transpilers' that generate JavaScript
+   - [TypeScript][4]
+     - provide type for variables
+     - also other features in es6
+   - [traceur-compiler][5]
+     - provide es6
+ - *don't use transpilers without understanding what it does to the code*
+
+[4]: http://www.typescriptlang.org/
+[5]: https://github.com/google/traceur-compiler
