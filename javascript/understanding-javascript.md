@@ -1945,3 +1945,6 @@ $('#login').click(function() {
 
 }(window, jQuery));
 ```
+
+### a side note
+ - I personally highly recommend this course
