@@ -235,3 +235,27 @@ transform
     </p>
 </form>
 ```
+
+## lists
+ - ul
+   - unordered list
+   - li
+     - list
+
+ - ol
+   - ordered list
+```
+<body>
+    <ul>
+        <h2>categories</h2>
+        <li><a href="document.html">list item</a></li>
+        <li><img width="100" src="images/cat.jpg" alt=""></li>
+        <li>list item</li>
+    </ul>
+    <ol>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ol>
+</body>
+```
