@@ -117,3 +117,12 @@ transform
 
 ## headings
  - h1,h2,h3,h4,h5,h6
+
+## comments, whitespace and line breaks
+ - whitespace is ignores in html
+ - line break
+ - comment
+```
+<br> <!-- line break -->
+<!-- comments -->
+```
