@@ -98,3 +98,11 @@ transform
 
 ## code editor
  - turn on your file extension
+
+# 2. page structure
+## first html code
+ - use **inspect** to check the style
+```
+<p>This is a sentence.</p>
+<h1>This is a sentence.</h1>
+```
