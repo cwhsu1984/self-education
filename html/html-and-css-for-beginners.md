@@ -151,3 +151,14 @@ transform
 ```
 <img width="100" height="100" src="images/cat.jpg">
 ```
+
+## ceating lnks
+ - a
+   - link
+   - target
+     - _blank
+       - new tab
+```
+<a href="images.html" target="_blank">click me</a>
+```
+
