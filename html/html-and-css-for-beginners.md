@@ -106,3 +106,11 @@ transform
 <p>This is a sentence.</p>
 <h1>This is a sentence.</h1>
 ```
+
+## exploring the document
+ - DOCTYPE
+   - document type
+   - html5 document
+ - lang is attribute
+   - tell that language is English
+ - encoding is UTF-8
