@@ -281,3 +281,22 @@ transform
     <p style="color:#333;font-size:24px;font-weight:bold">this is a paragraph.</p>
 </body>
 ```
+
+## internal
+ - using css inside document
+ - put style in head section
+```
+    <head>
+<style>
+p {
+    color:red;
+    font-weight:bold;
+    font-size:24px;
+}
+</style>
+    </head>
+    <body>
+        <p>hello dear student, how are you?</p>
+    </body>
+</html>
+```
