@@ -114,3 +114,6 @@ transform
  - lang is attribute
    - tell that language is English
  - encoding is UTF-8
+
+## headings
+ - h1,h2,h3,h4,h5,h6
