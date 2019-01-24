@@ -89,3 +89,9 @@ transform
    - save with .css extension
    - style.css
    - style sheet
+
+## course exercise and video quality
+ - change video quality
+ - download exercise file
+ - wrtie review
+ - for negative review, please contact the instructor and give him a chance to fix it
