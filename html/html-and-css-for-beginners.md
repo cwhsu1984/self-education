@@ -162,3 +162,13 @@ transform
 <a href="images.html" target="_blank">click me</a>
 ```
 
+## clickable images
+ - wrap image with a tag
+```
+<a href="images.html" target="_blank">
+    <h1>click me</h1>
+    <img width="100" src="images/cat.jpg">
+</a>
+
+```
+
