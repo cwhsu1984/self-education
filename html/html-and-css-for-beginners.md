@@ -95,3 +95,6 @@ transform
  - download exercise file
  - wrtie review
  - for negative review, please contact the instructor and give him a chance to fix it
+
+## code editor
+ - turn on your file extension
