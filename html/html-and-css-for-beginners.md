@@ -142,3 +142,12 @@ transform
    - like a container
 
 [1]: https://www.lipsum.com/
+
+## creating images
+ - img
+   - width
+     - pixels
+     - without height, it keeps proportion
+```
+<img width="100" height="100" src="images/cat.jpg">
+```
