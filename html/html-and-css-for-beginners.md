@@ -126,3 +126,19 @@ transform
 <br> <!-- line break -->
 <!-- comments -->
 ```
+
+## popular html tags
+ - [lorem ipsum][1]
+   - generate dummy text
+ - strong
+   - bolder darker
+ - i
+   - italic
+ - blockquote
+   - put text apart from everything else in a quote format
+ - hr
+   - horizontal rule
+ - div
+   - like a container
+
+[1]: https://www.lipsum.com/
