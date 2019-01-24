@@ -15,9 +15,17 @@ h1 {
 }
 
 body {
-    background:gray;
+    background:white;
 }
 
 div p {
-    color:blue
+    color:blue;
+}
+
+#first-para {
+    color:yellow;
+}
+
+.first-para {
+    color:purple;
 }

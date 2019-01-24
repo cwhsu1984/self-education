@@ -313,3 +313,22 @@ p {
  - select different elements from document
  - id
  - class
+
+## id's and classes
+ - ids are stronger than tags
+ - class
+   - when you have a lot of different elements that have the same style
+ - id
+   - for only one specific item
+   - when you want to specifically assign a unique name to a html element
+```
+<!-- id -->
+#first-para {
+    color:yellow;
+}
+
+<!-- class -->
+.first-para {
+    color:purple;
+}
+```
