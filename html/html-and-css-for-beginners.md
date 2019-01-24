@@ -332,3 +332,10 @@ p {
     color:purple;
 }
 ```
+
+## linking javascript
+```
+<head>
+    <script src="js/script.js"></script>
+</head>
+```
