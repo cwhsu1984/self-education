@@ -206,3 +206,32 @@ transform
     </tbody>
 </table>
 ```
+
+## forms
+ - form
+   - input
+     - type
+       - text, email, password, file, submit
+   - action
+     - send data to another file
+   - method
+     - usually POST
+```
+<form action="process.php" action="POST">
+    <label for="name">Name
+        <input type="text" placeholder="enter name">
+    </label>
+    <p> Email
+        <input name="email" type="email">
+    </p>
+    <p> Password
+        <input name="password" type="password">
+    </p>
+    <p>
+        <input name="image" type="file">
+    </p>
+    <p>
+        <input name="submit" type="submit">
+    </p>
+</form>
+```
