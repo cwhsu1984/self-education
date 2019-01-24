@@ -267,3 +267,17 @@ transform
 
 [2]: https://www.w3schools.com/tags/
 [3]: https://developer.mozilla.org/zh-TW/docs/Web/HTML
+
+# 3. css
+## inline style
+ - inline, internal, external
+ - [color picker][4]
+
+[4]: https://www.w3schools.com/colors/colors_picker.asp
+```
+<body>
+    <!-- attribute:value -->
+    <p style="color:red">this is another paragraph.</p>
+    <p style="color:#333;font-size:24px;font-weight:bold">this is a paragraph.</p>
+</body>
+```
