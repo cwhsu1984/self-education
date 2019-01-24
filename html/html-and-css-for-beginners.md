@@ -308,3 +308,8 @@ p {
 <link rel="stylesheet" href="css/style.css">
 </head>
 ```
+
+## selectors
+ - select different elements from document
+ - id
+ - class
