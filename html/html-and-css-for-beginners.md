@@ -300,3 +300,11 @@ p {
     </body>
 </html>
 ```
+
+## external
+ - use css from other file
+```
+<head>
+<link rel="stylesheet" href="css/style.css">
+</head>
+```
