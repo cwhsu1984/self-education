@@ -172,3 +172,37 @@ transform
 
 ```
 
+## tables
+ - table
+   - tr
+     - table row
+     - td
+       - table data
+   - th
+     - table heading
+   - thead
+   - tbody
+```
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>lastname</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>peter</td>
+            <td>williams</td>
+        </tr>
+        <tr>
+            <td>john</td>
+            <td>Doe</td>
+        </tr>
+        <tr>
+            <td>maria</td>
+            <td>Gonzalez</td>
+        </tr>
+    </tbody>
+</table>
+```
