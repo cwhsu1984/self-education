@@ -434,3 +434,8 @@ img#image {
     Hello There
 </div>
 ```
+
+## main divs
+ - [placeholder.com][7]
+
+[7]: https://placeholder.com
