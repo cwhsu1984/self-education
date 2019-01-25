@@ -93,3 +93,20 @@ footer a {
     color: #FFFFFF;
     font-size: 11px;
 }
+
+#about-page #home-image img {
+    width: 70%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+#about-page #profile-info {
+    float: right;
+    width: 20%;
+    margin: 5px;
+}
+
+#about-page .description {
+    clear: both;
+    margin-top:
+}

@@ -452,3 +452,4 @@ img#image {
 
 ## styling footer part 2
 
+## about page
