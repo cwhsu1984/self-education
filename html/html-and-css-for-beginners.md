@@ -445,3 +445,5 @@ img#image {
 ## styling container, body and header
 
 ## styling menu
+
+## styling main div
