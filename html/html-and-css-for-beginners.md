@@ -339,3 +339,10 @@ p {
     <script src="js/script.js"></script>
 </head>
 ```
+
+## comming styling properties
+ - [css properties reference][5]
+ - cascading style sheets
+   - last style overrides previous style
+
+[5]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
