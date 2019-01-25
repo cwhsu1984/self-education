@@ -1,0 +1,22 @@
+#page-title {
+    text-align: center;
+}
+
+#picture-container {
+    border: 1px solid black;
+    width: 400px;
+    /* height: 400px; */
+    margin: 0 auto;
+    border: 2px solid red;
+    padding: 20px;
+    background: #000;
+}
+
+#image {
+    width: 100%;
+}
+
+img#image {
+    border: 2px solid red;
+    border-radius: 5px;
+}

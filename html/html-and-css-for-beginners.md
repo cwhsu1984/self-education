@@ -346,3 +346,21 @@ p {
    - last style overrides previous style
 
 [5]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
+
+# 4. extra bonus lectures - more css exmaples
+## inserting pictures and styling
+ - debug tool > Elements > Styles > element.style
+   - play with it
+ - inspect element
+```
+/* target id image */
+#image {
+    width: 100%;
+}
+
+/* whatever image you find that its id is image */
+img#image {
+    border: 2px solid red;
+    border-radius: 5px;
+}
+```
