@@ -447,3 +447,5 @@ img#image {
 ## styling menu
 
 ## styling main div
+
+## sytling footer part 1

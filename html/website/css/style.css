@@ -59,3 +59,22 @@ h2 {
     line-height: 18px;
     text-emphasis: justify;
 }
+
+.main a:hover {
+    color: #444444;
+}
+
+footer {
+    padding: 6px 40px 6px 40px; /* top right bottom left */
+    background: #6d6d6d;
+    font-family: "Lucida Sans Unicode";
+    color: #444444;
+    font-size: 11px;
+    text-decoration: right;
+}
+
+footer a {
+    text-decoration: none;
+    color: #262626;
+
+}
