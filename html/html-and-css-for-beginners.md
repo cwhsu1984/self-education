@@ -374,3 +374,30 @@ img#image {
     margin:auto;
 }
 ```
+
+## hover effect
+ - css selector
+ - :hover
+   - selects links on mouse over
+```
+#hovers {
+    width:200px;
+    height:200px;
+    border: 1px solid black;
+    background-image: url(../images/cat.jpg);
+    background-size:100%;
+    background-repeat:no-repeat;
+    opacity:0.5;
+}
+
+#hovers h2 {
+    text-align:center;
+}
+
+#hovers:hover {
+    /* background-color:#000; */
+    border:1px solid red;
+    color:white;
+    opacity:1;
+}
+```
