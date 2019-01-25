@@ -449,3 +449,6 @@ img#image {
 ## styling main div
 
 ## sytling footer part 1
+
+## styling footer part 2
+
