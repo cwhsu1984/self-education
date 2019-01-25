@@ -364,3 +364,13 @@ img#image {
     border-radius: 5px;
 }
 ```
+
+## inserting pictures via css
+```
+#picture-css {
+    width:100px;
+    height:100px;
+    background-image: url(../images/cat.jpg);
+    margin:auto;
+}
+```
