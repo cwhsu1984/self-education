@@ -401,3 +401,10 @@ img#image {
     opacity:1;
 }
 ```
+
+## where to go next
+ - [Edwin Diaz][6]
+ - JavaScript
+ - PHP
+
+[6]: https://www.udemy.com/user/edwin166/
