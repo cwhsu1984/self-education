@@ -416,3 +416,21 @@ img#image {
  - do a little php
 
 ## structure
+
+## menu
+ - &nbsp;
+   - non-breaking space
+   - the line should not be wrapped at that point
+   - non-collapsing
+```
+// http://jsfiddle.net/RP3SC/
+<div style="width:45px; height:45px; border: solid thin red; overflow: visible">
+    Hello&nbsp;There
+</div>
+
+<br />
+
+<div style="width:45px; height:45px; border: solid thin red; overflow: visible">
+    Hello There
+</div>
+```
