@@ -439,3 +439,6 @@ img#image {
  - [placeholder.com][7]
 
 [7]: https://placeholder.com
+
+## footer and more
+
