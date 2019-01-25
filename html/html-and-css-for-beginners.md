@@ -453,3 +453,6 @@ img#image {
 ## styling footer part 2
 
 ## about page
+
+# 6. messaing form / contact form with some PHP
+## form html markup
