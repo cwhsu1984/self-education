@@ -456,3 +456,5 @@ img#image {
 
 # 6. messaing form / contact form with some PHP
 ## form html markup
+
+## styling form part 1
