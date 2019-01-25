@@ -443,3 +443,5 @@ img#image {
 ## footer and more
 
 ## styling container, body and header
+
+## styling menu
