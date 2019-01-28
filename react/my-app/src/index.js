@@ -73,15 +73,15 @@ class Game extends React.Component {
       return;
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
-    this.setState({
+    this.setState(prevState => ({
       history: history.concat([{
         squares: squares,
       }]),
       position: position.concat(i),
       stepNumber: history.length,
-      xIsNext: !this.state.xIsNext,
+      xIsNext: !prevState.xIsNext,
       selected: false,
-    });
+    }));
   }
 
   handleToggle() {
