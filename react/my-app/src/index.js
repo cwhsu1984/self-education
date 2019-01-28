@@ -51,6 +51,7 @@ class Game extends React.Component {
       position: [0],
       stepNumber: 0,
       xIsNext: true,
+      selected: false,
     };
   }
 
@@ -70,6 +71,7 @@ class Game extends React.Component {
       position: position.concat(i),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
+      selected: false,
     });
   }
 
@@ -77,7 +79,19 @@ class Game extends React.Component {
     this.setState({
       stepNumber: step,
       xIsNext: (step % 2) === 0,
+      selected: true,
     });
+  }
+
+  setFontWeight(selected, stepNumber, move) {
+    if (this.isSelectedMove(selected, stepNumber, move)) {
+      return 'bold';
+    }
+    return 'normal';
+  }
+
+  isSelectedMove(selected, stepNumber, move) {
+    return selected && stepNumber === move;
   }
 
   render() {
@@ -85,14 +99,17 @@ class Game extends React.Component {
     const position = this.state.position;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
+    const selected = this.state.selected;
+    const stepNumber = this.state.stepNumber;
 
     const moves = history.map((step, move) => {
+      const fontWeight = this.setFontWeight(selected, stepNumber, move);
       const desc = move ?
         'Go to move #' + move + ' ' + calculateRowCol(position[move - 1]) :
         'Go to game start';
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button style={{'fontWeight': fontWeight}} onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
