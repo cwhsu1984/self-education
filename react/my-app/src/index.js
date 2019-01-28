@@ -10,6 +10,16 @@ function Square(props) {
   );
 }
 
+class Toggle extends React.Component {
+  render() {
+    return (
+      <button onClick={this.props.onClick}>
+        {this.props.isToggleOn ? 'ASC' : 'DESC'}
+      </button>
+    );
+  }
+}
+
 class Board extends React.Component {
   renderSquare(i) {
     return <Square
@@ -50,6 +60,7 @@ class Game extends React.Component {
       stepNumber: 0,
       xIsNext: true,
       selected: false,
+      isToggleOn: true,
     };
   }
 
@@ -71,6 +82,12 @@ class Game extends React.Component {
       xIsNext: !this.state.xIsNext,
       selected: false,
     });
+  }
+
+  handleToggle() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
   }
 
   jumpTo(step) {
@@ -99,8 +116,9 @@ class Game extends React.Component {
     const winner = calculateWinner(current.squares);
     const selected = this.state.selected;
     const stepNumber = this.state.stepNumber;
+    const isToggleOn = this.state.isToggleOn;
 
-    const moves = history.map((step, move) => {
+    const movesList = history.map((step, move) => {
       const fontWeight = this.setFontWeight(selected, stepNumber, move);
       const desc = move ?
         'Go to move #' + move + ' ' + calculateRowCol(position[move - 1]) :
@@ -111,6 +129,8 @@ class Game extends React.Component {
         </li>
       );
     });
+
+    const moves = isToggleOn ? movesList : movesList.reverse();
 
     let status;
     if (winner) {
@@ -129,6 +149,12 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
+          <div>
+            <Toggle
+              isToggleOn={isToggleOn}
+              onClick={() => this.handleToggle()}
+            />
+          </div>
           <ol>{moves}</ol>
         </div>
       </div>
