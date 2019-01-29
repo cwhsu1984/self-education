@@ -140,12 +140,15 @@ class Game extends React.Component {
     });
 
     const moves = isToggleOn ? movesList : movesList.reverse();
+    const draw = !current.squares.includes(null);
 
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
-    } else {
+    } else if (!winner && !draw) {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    } else {
+      status = 'Draw Game';
     }
 
     return (
